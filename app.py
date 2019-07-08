@@ -38,7 +38,41 @@ def insert_recipe():
   
   
   
+#  Edit Recipe route 
   
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    all_cuisines =  mongo.db.cuisines.find()
+    return render_template('editrecipe.html', recipe=the_recipe, cuisine=all_cuisines)
+ 
+
+# Update Recipe with pre populated fields
+ 
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    recipes = mongo.db.recipes
+    recipes.update( {'_id': ObjectId(recipe_id)},
+    {
+        'name':request.form.get('name'),
+        'description':request.form.get('description'),
+        'serves':request.form.get('serves'),
+        'preptime':request.form.get('preptime'),
+        'cooktime':request.form.get('cooktime'),
+        'meal':request.form.get('meal'),
+        'ingredient_1':request.form.get('ingredient_1'),
+        'ingredient_2':request.form.get('ingredient_2'),
+        'ingredient_3':request.form.get('ingredient_3'),
+        'ingredient_4':request.form.get('ingredient_4'),
+        'ingredient_5':request.form.get('ingredient_5'),
+        'method_1':request.form.get('method_1'),
+        'method_2':request.form.get('method_2'),
+        'method_3':request.form.get('method_3'),
+        'cuisine':request.form.get('cuisine'),
+        'author':request.form.get('author')
+
+    })
+    return redirect(url_for('get_recipes'))  
 
   
 
