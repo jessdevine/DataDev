@@ -1,0 +1,44 @@
+{% extends 'base.html'%} {% block content %}
+<div class="row">
+    <ul class="collapsible" data-collapsible="accordion">
+        
+
+        {% for recipe in recipes %}
+        
+            <div class="collapsible-header">
+                <div class="col s3">
+                    <i class="material-icons">expand_more</i>
+
+                </div>
+
+                <div class="recipe_header col s9">
+                    <strong>{{recipe.name}}</strong>
+                </div>
+              
+               
+            </div>
+            <div class="collapsible-body">
+                <span>
+              
+                
+                <ul class="collection">
+                    
+                   
+                    <div class="col s12 m12">
+                        <li class="collection-item">{{recipe.description}} </li>
+                        
+                           
+                      </div>
+                      
+                        </ul>
+                      
+            
+            </span>
+            </div>
+
+
+
+            {% endfor %}
+    </ul>
+</div>
+{% endblock %}
