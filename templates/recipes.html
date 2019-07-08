@@ -4,7 +4,7 @@
         
 
         {% for recipe in recipes %}
-        
+    
             <div class="collapsible-header">
                 <div class="col s3">
                     <i class="material-icons">expand_more</i>
@@ -26,10 +26,35 @@
                    
                     <div class="col s12 m12">
                         <li class="collection-item">{{recipe.description}} </li>
-                        
+                        <li class="collection-item"><strong>Cuisine:</strong> {{recipe.cuisine}} </li>
+                        <li class="collection-item"><strong>Prep Time:</strong> {{recipe.preptime}} </li>
+                        <li class="collection-item"><strong>Cooking Time:</strong> {{recipe.cooktime}} </li>
+                        <li class="collection-item"><strong>Serves:</strong> {{recipe.serves}} </li>
+                        <li class="collection-item"><strong>Meal:</strong> {{recipe.meal}} </li>
+
                            
                       </div>
                       
+                    <h5 class="ingredients col s12 m12">Ingredients</h5>
+                    <div class="col s12 m12">
+                      <li class="collection-item">{{recipe.ingredient_1}}</li>
+                      <li class="collection-item">{{recipe.ingredient_2}}</li>
+                      <li class="collection-item">{{recipe.ingredient_3}} </li>
+                      <li class="collection-item">{{recipe.ingredient_4}} </li>
+                      <li class="collection-item">{{recipe.ingredient_5}} </li>
+                      </div>
+                      
+                      <h5 class="ingredients col s12 m12">Method</h5>
+                    <div class="col s12 m12">
+                      <li class="collection-item">{{recipe.method_1}}</li>
+                      <li class="collection-item">{{recipe.method_2}}</li>
+                      <li class="collection-item">{{recipe.method_3}} </li>
+                      </div>
+                    
+                     <div class="col s12 m12">
+                        
+                        <li class="collection-item"><strong>Author:</strong> {{recipe.author}} </li>
+                      </div>
                         </ul>
                       
             
