@@ -12,9 +12,16 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:537743root@jesscluster-o9ja6.mongo
 
 mongo = PyMongo(app)
 
-# Get Recipies 
+# Home Page
 
 @app.route('/')
+@app.route('/home_page')
+def home_page():
+    return render_template("home.html")
+
+
+# All Recipes 
+
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html", 
@@ -81,6 +88,38 @@ def update_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
+    
+    
+#### Filters ####
+
+
+# Breakfast
+@app.route('/breakfast_meals')
+def breakfast_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"meal": "Breakfast"}))
+
+
+# Lunch
+@app.route('/lunch_meals')
+def lunch_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"meal": "Lunch"}))
+                           
+
+# Dinner
+@app.route('/dinner_meals')
+def dinner_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"meal": "Dinner"}))
+                           
+# Deserts
+@app.route('/dessert_meals')
+def dessert_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"meal": "Dessert"}))
+
+
     
 
 if __name__ == '__main__':
