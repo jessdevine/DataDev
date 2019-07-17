@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 
 
@@ -24,15 +25,16 @@
 
 
                 </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{{ url_for('home_page')}}">Home</a></li>
-                    <li><a href="{{ url_for('add_recipe')}}">New Recipe</a></li>
-                    <li><a href="{{ url_for('get_recipes')}}">All Recipes</a></li>
+                <ul class="side-nav deep-orange darken-4" id="mobile-demo">
+                    <li><a href="{{ url_for('home_page')}} class="nav-color"">Home</a></li>
+                    <li><a class="nav-color" href="{{ url_for('add_recipe')}}">New Recipe</a></li>
+                    <li><a class="nav-color" href="{{ url_for('get_recipes')}}">All Recipes</a></li>
 
                 </ul>
             </div>
         </nav>
     </header>
+    
     
     
     
@@ -46,11 +48,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            $(".button-collapse").sideNav();
             $('.collapsible').collapsible();
             $('select').material_select();
+
             
         });
     </script>
 </body>
 
 </html>
+

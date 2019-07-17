@@ -35,3 +35,8 @@ h3 {
 .card .card-content .card-title {
     display: inline;
 }
+
+
+.nav-color {
+    color: white;
+}
