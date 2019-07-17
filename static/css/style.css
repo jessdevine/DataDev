@@ -37,6 +37,15 @@ h3 {
 }
 
 
-.nav-color {
+a.nav-color {
     color: white;
+}
+
+.activator.responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.brand-font {
+    font-family: 'Chakra Petch', sans-serif;
 }

@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
@@ -11,11 +12,11 @@
 
 </head>
 
-<body class="feature-image">
+<body class="feature-image brand-font">
     <header>
         <nav>
-            <div class="nav-wrapper deep-orange darken-4">
-                <a href="{{ url_for('home_page')}}" class="brand-logo">QuikNom!</a>
+            <div class="nav-wrapper deep-orange darken-4 brand-font">
+                <a href="{{ url_for('home_page')}}" class="brand-logo brand-font">DishLab</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home_page')}}">Home</a></li>
