@@ -90,7 +90,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for('get_recipes'))
     
     
-#### Filters ####
+#### Home Page Categories ####
 
 
 # Breakfast
@@ -98,7 +98,6 @@ def delete_recipe(recipe_id):
 def breakfast_meals():
     return render_template("recipes.html",
                            recipes=mongo.db.recipes.find({"meal": "Breakfast"}))
-
 
 # Lunch
 @app.route('/lunch_meals')
@@ -118,6 +117,19 @@ def dinner_meals():
 def dessert_meals():
     return render_template("recipes.html",
                            recipes=mongo.db.recipes.find({"meal": "Dessert"}))
+                           
+# American
+@app.route('/american_meals')
+def american_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"cuisine": "American"}))
+
+# Asian Street Food
+@app.route('/asian_meals')
+def asian_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"cuisine": "Asian"}))
+
 
 
     
