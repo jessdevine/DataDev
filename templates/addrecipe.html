@@ -1,15 +1,23 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Add Recipe</h3>
+
+  <!-- Add recipe form -->
+
 <div class="row">
     <form action="{{ url_for('insert_recipe') }}" method="POST"  class="col s12 whitebackground">
+         
+          <!-- Recipe Name -->
+        
         <div class="row">
-            
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
                 <input id="name" name="name" type="text">
                 <label for="icon_prefix">Recipe Name</label>
             </div>
         </div>
+        
+        <!--  Description -->
+
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -17,6 +25,9 @@
                 <label for="icon_telephone">Description</label>
             </div>
         </div>
+        
+         <!--  Author -->
+
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -24,6 +35,9 @@
                 <label for="icon_telephone">Author</label>
             </div>
         </div>
+                
+         <!--  Cuisine -->
+
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -31,6 +45,8 @@
                 <label for="icon_telephone">Cuisine</label>
             </div>
         </div>
+        
+        <!--  Ingredients -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -66,6 +82,10 @@
                 <label for="icon_telephone">Ingredient</label>
             </div>
         </div>
+        
+        
+         <!--  Methods -->
+
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -87,6 +107,9 @@
                 <label for="icon_telephone"></label>
             </div>
         </div>
+        
+        <!--  Prep Time -->
+
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -94,6 +117,9 @@
                 <label for="icon_telephone">Prep Time:</label>
             </div>
         </div>
+        
+        <!--  Cook Time -->
+
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -101,6 +127,9 @@
                 <label for="icon_telephone">Cook Time:</label>
             </div>
         </div>
+        
+        <!--  Serves -->
+
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -109,6 +138,8 @@
             </div>
         </div>
         
+       <!--  Meal  -->
+
      <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -118,7 +149,8 @@
         </div>
 
 
-    
+    <!--  Submit button  -->
+
         <div class="row">
             <button class="btn waves-effect waves-light" type="submit" name="action">Add Recipe
                 <i class="material-icons right">playlist_add</i>
