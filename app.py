@@ -17,7 +17,17 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/home_page')
 def home_page():
-    return render_template("home.html")
+    return render_template("home.html",
+    count_recipies=mongo.db.recipes.count(),
+    count_breakfasts=mongo.db.recipes.count({"meal": "Breakfast"}),
+    count_lunches=mongo.db.recipes.count({"meal": "Lunch"}),
+    count_dinners=mongo.db.recipes.count({"meal": "Dinner"}),
+    count_american=mongo.db.recipes.count({"cuisine":"American"}),
+    count_asian=mongo.db.recipes.count({"cuisine": "Asian"}),
+    count_deserts=mongo.db.recipes.count({"meal": "Desert"}))
+    
+
+
 
 
 # All Recipes 
@@ -131,7 +141,13 @@ def asian_meals():
                            recipes=mongo.db.recipes.find({"cuisine": "Asian"}))
 
 
-
+# Summaries 
+    
+@app.route('/summaries')
+def summaries():
+    return render_template("summaries.html", 
+                            page_title="Summaries",
+                            count_recipies=mongo.db.recipes.count())
     
 
 if __name__ == '__main__':
