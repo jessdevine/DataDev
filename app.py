@@ -23,9 +23,11 @@ def home_page():
     count_lunches=mongo.db.recipes.count({"meal": "Lunch"}),
     count_dinners=mongo.db.recipes.count({"meal": "Dinner"}),
     count_american=mongo.db.recipes.count({"cuisine":"American"}),
+    count_deserts=mongo.db.recipes.count({"meal":"Dessert"}),
+    count_vegan=mongo.db.recipes.count({"cuisine": "Vegan"}),
     count_asian=mongo.db.recipes.count({"cuisine": "Asian"}),
-    count_deserts=mongo.db.recipes.count({"meal": "Desert"}))
-    
+    count_mediterranean=mongo.db.recipes.count({"cuisine": "Mediterranean"}),
+    count_italian=mongo.db.recipes.count({"meal": "Italian"}))
 
 
 
@@ -36,6 +38,7 @@ def home_page():
 def get_recipes():
     return render_template("recipes.html", 
                            recipes=mongo.db.recipes.find())
+                           
                            
 # Add Recipe 
 
@@ -100,8 +103,9 @@ def delete_recipe(recipe_id):
     return redirect(url_for('get_recipes'))
     
     
-#### Home Page Categories ####
 
+
+# MEALS
 
 # Breakfast
 @app.route('/breakfast_meals')
@@ -127,7 +131,10 @@ def dinner_meals():
 def dessert_meals():
     return render_template("recipes.html",
                            recipes=mongo.db.recipes.find({"meal": "Dessert"}))
-                           
+        
+        
+# MEALS
+                   
 # American
 @app.route('/american_meals')
 def american_meals():
@@ -139,15 +146,41 @@ def american_meals():
 def asian_meals():
     return render_template("recipes.html",
                            recipes=mongo.db.recipes.find({"cuisine": "Asian"}))
+                           
+# Italian
+@app.route('/italian_meals')
+def italian_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"cuisine": "Italian"}))
+                           
+                           
+# Vegan
+@app.route('/vegan_meals')
+def vegan_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"cuisine": "Vegan"}))
+                           
+# Keto
+@app.route('/keto_meals')
+def keto_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"cuisine": "Keto"}))
+                          
+                           
+# Indian
+@app.route('/indian_meals')
+def indian_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"cuisine": "Indian"}))
 
+                           
+                           
+# Mediterranean
+@app.route('/mediterranean_meals')
+def mediterranean_meals():
+    return render_template("recipes.html",
+                           recipes=mongo.db.recipes.find({"cuisine": "Mediterranean"}))
 
-# Summaries 
-    
-@app.route('/summaries')
-def summaries():
-    return render_template("summaries.html", 
-                            page_title="Summaries",
-                            count_recipies=mongo.db.recipes.count())
     
 
 if __name__ == '__main__':

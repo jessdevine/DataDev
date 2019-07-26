@@ -49,3 +49,42 @@ a.nav-color {
 .brand-font {
     font-family: 'Chakra Petch', sans-serif;
 }
+
+.summaries {
+    max-width: 100%;
+    max-height: 50%;
+    height: auto;
+}
+
+.summaries-count {
+    min-height: 150px;
+}
+
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+      
+      
+.blacktext {
+    color: gray;
+}
+
+.dropdown-button{
+    color: white;
+}
+
+
+.dropdown-size {
+    width: 120px;
+}
+
+.sort-padding{
+    padding-top: 12px;
+}

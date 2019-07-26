@@ -1,25 +1,49 @@
 {% extends 'base.html'%} {% block content %}
+
+
+<div class="row sort-padding">
+
+    <div class="col offset-s9 s3 sort-menu deep-orange darken-4">
+        <ul id="dropdown1" class="dropdown-content dropdown-size">
+            <li><a href="{{ url_for('american_meals')}}">American</a></li>
+            <li><a href="{{ url_for('asian_meals')}}">Asian</a></li>
+            <li><a href="{{ url_for('keto_meals')}}">Keto</a></li>
+            <li><a href="{{ url_for('italian_meals')}}">Italian</a></li>
+            <li><a href="{{ url_for('vegan_meals')}}">Vegan</a></li>
+            <li><a href="{{ url_for('indian_meals')}}">Indian</a></li>
+            <li><a href="{{ url_for('mediterranean_meals')}}">Mediterranean</a></li>
+
+        </ul>
+            <div class="nav-wrapper">
+                <ul class="right">
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Sort By Cuisine<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+    </div>
+</div>
+
+<!-- Recipes -->
+
 <div class="row">
     <ul class="collapsible" data-collapsible="accordion">
-        
-
         {% for recipe in recipes %}
-        
+
         <li>
             <div class="collapsible-header">
                 <div class="col s3">
                     <i class="material-icons">expand_more</i>
                     <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small orange darken-4">Edit</a>
                 </div>
-                
+
                 <!--  Recipie name  -->
 
 
                 <div class="recipe_header col s9">
                     <strong>{{recipe.name}}</strong>
                 </div>
-              
-               
+
+
             </div>
             <div class="collapsible-body">
                 <span>
@@ -66,7 +90,7 @@
             </span>
             </div>
 
-           
+
 
 
             {% endfor %}
