@@ -27,6 +27,7 @@ def home_page():
     count_vegan=mongo.db.recipes.count({"cuisine": "Vegan"}),
     count_asian=mongo.db.recipes.count({"cuisine": "Asian"}),
     count_mediterranean=mongo.db.recipes.count({"cuisine": "Mediterranean"}),
+    count_keto=mongo.db.recipes.count({"cuisine": "Keto"}),
     count_italian=mongo.db.recipes.count({"meal": "Italian"}))
 
 
