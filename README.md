@@ -1,10 +1,12 @@
 # DishLab: 
 
+http://cookbook.jessicadevine.com/
+
 DishLabs soul purpose is to share quick and easy meals, all made with only 5 ingredients. It targerts busy milienals who are too 
 occuibed with study, work, socializing and the general chaos of living in the 21st centery to be wasting valuable time in the kitchen. 
 All while wanting to maintain a healthy lifestyle with home cooked meals using only the honest active ingredients. 
 
-## UX
+##
 
 This web application is built with responsive, mobile first design and an edgy aesthetic. Users will be able to view, filter, add, edit, and delete 
 recipes. 
