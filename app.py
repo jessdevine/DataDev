@@ -7,14 +7,8 @@ app = Flask(__name__)
 
 #Connecting to MongoDB "Online Cookbook"
 
-#MONGODB_URI=os.getenv("MONGO_URI")
-#DBS_NAME="JessCluster"
-#COLLECTION_NAME="cookbook"
 
 app.config["MONGO_DBNAME"] = 'cookbook'
-#app.config["MONGO_URI"] = 'mongodb+srv://root:537743root@jesscluster-o9ja6.mongodb.net/cookbook?retryWrites=true'
-
-
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 
