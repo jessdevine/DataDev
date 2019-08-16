@@ -25,7 +25,6 @@ As a user who wants to add a recipe to the site I want to be able to:
 - Have the option to Submit  
 
 As a user who wants to edit or delete an existing recipie I want to be able to:
-
 - Easily find recipies by search or filter 
 - See an edit button which brings me to a page with pre populated fields of the selected recipie
 - Submit changes or Delete recipie button at the bottom of the form 
@@ -35,15 +34,17 @@ A user whos wants to find a recipe for a specfic meal time I want to be able to:
 - See a selection of only recipie names and cusines
 - Drop down arrow on each item to expand on recipe and see all attributes
 
-A user whos wants to search for a recipie:
+A user whos wants to filter for a cusine:
+- Goes to All Recipes 
+- Sees a drop down selection 
+- User selects their prefer cusine
+- Recipes update based on selected cusine
 
-[TO DO]
+Wireframes:
 
-A user whos wants to filter for a recipie:
+http://cookbook.jessicadevine.com/static/images/homepage.png
 
-[TO DO]
-
-[ADD WIREFRAMES]
+http://cookbook.jessicadevine.com/static/images/recipes.png
 
 ## Features
 
@@ -53,50 +54,97 @@ A user whos wants to filter for a recipie:
 - Edit existing recipies
 - Delete recipes
 - Filter/Sort recipes 
-- Search recipes
 
 ### Features Left to Implement
-- A user log in system
-- More advanced searching 
+- A user login system
+- Searching 
 
 ## Technologies Used
-
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 
 [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)
 
-[Materialize CSS](#)
+[Materialize CSS](https://materializecss.com/)
 
-[JavaScript](#)
+[JavaScript](https://www.javascript.com/)
 
-[Flask](#)
+[Flask](https://flask.palletsprojects.com/en/1.0.x/)
 
-[Python](#)
+[Python](https://www.python.org/)
 
-[MongoDB](#)
+[MongoDB](https://www.mongodb.com/)
 
-[Atlas](#)
+[Atlas](https://www.mongodb.com/cloud/atlas)
 
-[Heroku](#)
+[Heroku](https://dashboard.heroku.com/)
 
 
 
 ## Testing
-
-[TO DO]
+- Tested on all new age desktop and mobile browsers to ensure cross compatibility & functionality.
+- Tested to be responsive and to ensure it would be correctly displayed across different mobile screens sizes.
+- Each one of the user stories were tested without errors.
+- Testing for this project was done manually. The majority of testing covered the different Flask routes. 
+- On the homepage if any user selects one of the meals, that being "Breakfast", "Lunch" etc it would route them to a recipies with only recipies under the selected meal.
+- On the home page the bottom contains a summaries section in which different cusines were counted from the database
+- For text-area and inputs, a max-length was added to restrict input length. 
+- For form options like Meal, Cusines and Prep and cook time drop downs were implemented to avoid human error when entering these feilds
 
 
 ## Deployment
 
-[TO DO]
+### I deployed my site using Heroku
 
+* Create a new app on Heroku 
+* If Heroku is not already pre installed in the development environment then run the following CLI command:
+```
+$ sudo snap install --classic heroku
+```
+* Login to Heroku Via the command line:
+```
+$ heroku login 
+```
 
-## Credits
+* Create a new Git repository and connect Heroku
+```
+$ cd my-project/
+$ git init
+$ heroku git:remote -a datadevelopment
+```
+
+Add Requirements.txt
+```
+$ sudo pip3 freeze —local > requirements.txt
+```
+Add ProcFile
+```
+echo web: python app.py > Procfile
+```
+Deploy Site: 
+```
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+```
+Run Application:
+```
+$ heroku ps:scale web=1
+```
+In the Heroku application
+Go to Settings > Config Vars
+Specify IP & Port:
+```
+IP    
+PORT
+MONGODB_URI
+```
+
 
 ### Content
 
+- A portion of the content was written by myself and other recipes were obtained from [Pillsbury](https://www.pillsbury.com/recipes/5-ingredient-recipes)
+
 ### Media
-- The photos used in this site were obtained [Unsplash](from https://unsplash.com/)
+- The photos used in this site were obtained [Unsplash](https://unsplash.com/)
 
